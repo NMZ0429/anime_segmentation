@@ -1,5 +1,4 @@
 opencv-contrib-python
-libgl1-mesa-dev
 opencv-python
 paddlehub
 paddlepaddle
