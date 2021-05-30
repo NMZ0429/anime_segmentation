@@ -6,7 +6,7 @@ import tempfile
 
 # layout setting
 st.set_page_config(
-    page_title="Made by Namazur",
+    page_title="Made by Namazu",
     page_icon=None,
     layout="wide",
     initial_sidebar_state="collapsed",
