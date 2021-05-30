@@ -42,7 +42,7 @@ def cache_model():
 u2net = cache_model()
 
 
-@st.cache()
+@st.cache(ttl=60)
 def segment(img, out_dir, model=u2net):
     result = model.Segmentation(
         # images=[cv2.imread(img.name)],
