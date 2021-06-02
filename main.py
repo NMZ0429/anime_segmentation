@@ -33,7 +33,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, ttl=300)
 def cache_model():
     model = hub.Module(name="U2Net")
     return model
