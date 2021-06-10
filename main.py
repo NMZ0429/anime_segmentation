@@ -33,7 +33,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
-@st.cache(allow_output_mutation=True, ttl=300)
+@st.cache(allow_output_mutation=True,max_entries=2, ttl=300)
 def cache_model():
     model = hub.Module(name="U2Net")
     return model
@@ -42,7 +42,7 @@ def cache_model():
 u2net = cache_model()
 
 
-@st.cache(ttl=60)
+@st.cache(max_entries=2, ttl=60)
 def segment(img, out_dir, model=u2net):
     result = model.Segmentation(
         # images=[cv2.imread(img.name)],
