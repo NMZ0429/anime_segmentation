@@ -33,12 +33,14 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
-#@st.cache(allow_output_mutation=True, max_entries=1, ttl=3000)
+@st.cache(allow_output_mutation=True, max_entries=1, ttl=3000)
 def cache_model():
-    #model = hub.Module(name="U2Net", )
-    model = hub.Module(name="U2Net")
+    model = hub.Module(name="U2Net", )
+    #model = hub.Module(directory="/Users/gen/.paddlehub/modules/U2Net")
+    #model = hub.Module(directory="./U2Net")
     return model
 
+# https://drive.google.com/drive/folders/1qToXLZ_6lM091hS2Nl8o2NbX_pB38KZ8?usp=sharing
 
 u2net = cache_model()
 
